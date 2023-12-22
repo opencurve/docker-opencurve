@@ -1,32 +1,7 @@
-OBM - OpenCurve Project Build Manager
+docker-opencurve -  Docker tooling for OpenCurve project
 ---
 
-OBM is a tool for help you build opencurve project easily.
-
-Installation
----
-
-```
-$ bash -c "$(curl -fsSL https://obm.nos-eastchina1.126.net/script/install.sh)"
-```
-
-Usage
----
-
-```bash
-$ git clone git@github.com:opencurve/curve.git
-$ cd curve
-$ obm create
-$ make build
-```
-
-```
-$ vim .obm.cfg
-container_name: curve-build-playground.ubuntu20
-container_image: opencurvedocker/curve-build:ubuntu20
-```
-
-
+docker-opencurve is Docker tooling for OpenCurve projecet.
 
 Image for Build
 ---
@@ -47,15 +22,23 @@ curveadm
 
 | Distro | Version | Image |
 | :--- | :--- | :--- |
-| `debian` | `10` | opencurvedocker/curveadm-build:debian10 |
+| `debian` | `10` | opencurvedocker/curveadm-build:golang1.19 |
+
 
 Image for Deploy
 ---
 
-curve
+CurveFS
 ===
 
-| Version | Image |
-| :--- | :--- |
-| v2.7 | |
-| v2.6 | |
+| Version | Image | Description |
+| :--- | :--- | :--- |
+| [v2.7](https://github.com/opencurve/curve/commits/release2.7) | quay.io/opencurve/curve/curvefs:v2.7.0-rc2_b125418 | Hadoop SDK supported |
+| [v2.6](https://github.com/opencurve/curve/commits/release2.6-hotfix) | quay.io/opencurve/curve/curvefs:v2.6.0-hotfix_c72cb85 | CTO(close-to-open) performance |
+
+CurveBS
+===
+
+| Version | Image | Description |
+| :--- | :--- | :--- |
+| [v1.2.7](https://github.com/opencurve/curve/commits/release1.2/) | quay.io/opencurve/curve/curvebs:v1.2.7-rc3_47a5267 | Latest stable |
